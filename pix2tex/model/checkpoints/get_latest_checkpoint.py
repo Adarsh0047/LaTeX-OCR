@@ -39,9 +39,9 @@ def download_checkpoints():
     path = os.path.dirname(__file__)
     print('download weights', tag, 'to path', path)
     weights = 'https://github.com/Adarsh0047/Sample/raw/27jan/weights.pth'
-    print("Downloading weights.pth from", weights)
+    print("Downloading weights.pth from: ", weights)
     resizer = 'https://github.com/Adarsh0047/Sample/raw/27jan/image_resizer.pth'
-    print("Downloading image_resizer.pth from", resizer)
+    print("Downloading image_resizer.pth from: ", resizer)
     for url, name in zip([weights, resizer], ['weights.pth', 'image_resizer.pth']):
         file = download_as_bytes_with_progress(url, name)
         open(os.path.join(path, name), "wb").write(file)
